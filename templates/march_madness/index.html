@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script type='text/javascript' src='jquery_cycle.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>March Madness</title>
+</head>
+<body>
+    <div id="site">
+        <div id='page1'>
+        <div class="content bracket row">
+            <div class="col round1">
+                <div class="header">
+                    <h5>Round 1</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+            </div>
+            <div class="col round2">
+                <div class="header">
+                    <h5>Round 2</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+            </div>
+            <div class="col round3">
+                <div class="header">
+                    <h5>Round 3</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+            </div>
+            <div class="col round4">
+                <div class="header">
+                    <h5>Round 4</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                </div>
+            </div>
+        </div>
+        <div class="next"><a href="#">Down</a></div>
+    </div>
+
+    <div id='page2'>
+            <div class="space"><a class="prev" href="#">Up</a></div>
+            <div class="content bracket row">
+            <div class="col round1">
+                <div class="header">
+                    <h5>Round 1</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+            </div>
+            <div class="col round2">
+                <div class="header">
+                    <h5>Round 2</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+            </div>
+            <div class="col round3">
+                <div class="header">
+                    <h5>Round 3</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                    <div class="team"></div>
+                </div>
+            </div>
+            <div class="col round4">
+                <div class="header">
+                    <h5>Round 4</h5>
+                </div>
+                <div class="match">
+                    <div class="team"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // $(function(){
+        //     $("#site").cycle({
+        //         fx : "scrollVert",
+        //         next : ".next a",
+        //         prev : ".prev a",
+        //         timeout : 0
+        //     });
+        // });
+
+        // $(".next a, .prev").click(function(){
+        //     console.log("Hello")
+        //     $this = $(this);
+        //     $this.parent().parent().parent().slideUp();  
+        // });
+        
+        $("body").css("overflow", "hidden");
+        ToggleScrollUp();
+        $(window).scroll(function () {
+            ToggleScrollUp();
+        });
+        $(".next a").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#page2").offset().top
+            }, 1000);
+        })
+        $(".prev").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#page1").offset().top
+            }, 1000);
+        })
+
+        function ToggleScrollUp() {
+            if ($(window).scrollTop() >= $("#page2").offset().top + $('#page2').outerHeight() - window.innerHeight) {
+                $('.prev').fadeIn();
+            } else {
+                $('.prev').fadeOut();
+            }
+        }
+    </script>
+    
+</body>
+</html>
