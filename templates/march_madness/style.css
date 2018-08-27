@@ -80,6 +80,7 @@
   padding: 14px 20px 12px 45px;
   border: none;
   border-bottom: 1px solid #ddd;
+  border-radius:0.25em 0.25em 0.25em 0.25em;
 }
 
 /* The search field when it gets focus/clicked on */
@@ -98,6 +99,7 @@
     background-color: #f6f6f6;
     min-width: 230px;
     border: 1px solid #ddd;
+    border-radius:0.25em 0.25em 0.25em 0.25em;
     z-index: 1;
 }
 
