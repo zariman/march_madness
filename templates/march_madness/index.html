@@ -44,22 +44,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"><span onclick="openNav()">Run Algorithm</span></a>
                 </li>
-                 <!-- Use any element to open/show the overlay navigation menu -->
-                
             </ul>
-            <div class="dropdown">
-                <button id="dropdown" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a href="#about">About</a>
-                    <a href="#base">Base</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#custom">Custom</a>
-                    <a href="#support">Support</a>
-                    <a href="#tools">Tools</a>
-                </div>
-            </div>
             <div>
                 <select class="form-control">
                     <option selected>Choose Year</option>
@@ -76,7 +61,11 @@
 
         <!-- Button to close the overlay navigation -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      
+        
+        <h1>Algorithm</h1>
+        <form action="">
+            <input type="text">
+        </form>
         <!-- Overlay content -->
         <div class="overlay-content">
           <a href="#">About</a>
@@ -120,8 +109,7 @@
                             <h5>Round 1</h5>
                         </div>
                         <div class="match">
-                            <div class="team">
-                            </div>
+                            <div class="team"></div>
                             <div class="team"></div>
                         </div>
                         <div class="match">
@@ -473,36 +461,6 @@
     </div>
 
     <script>
-        // $(".next a, .prev").click(function(){
-        //     console.log("Hello")
-        //     $this = $(this);
-        //     $this.parent().parent().parent().slideUp();  
-        // });
-        
-        // $("body").css("overflow", "hidden");
-        // ToggleScrollUp();
-        // $(window).scroll(function () {
-        //     ToggleScrollUp();
-        // });
-        // $(".next a").click(function(){
-        //     $('html, body').animate({
-        //         scrollTop: $("#page2").offset().top
-        //     }, 1000);
-        // })
-        // $(".prev").click(function(){
-        //     $('html, body').animate({
-        //         scrollTop: $("#page1").offset().top
-        //     }, 1000);
-        // })
-
-        // function ToggleScrollUp() {
-        //     if ($(window).scrollTop() >= $("#page2").offset().top + $('#page2').outerHeight() - window.innerHeight) {
-        //         $('.prev').fadeIn();
-        //     } else {
-        //         $('.prev').fadeOut();
-        //     }
-        // }
-
         $(document).ready(function(){
             new fullpage('#wrapper', {
                 interlockedSlides: true,
@@ -512,45 +470,86 @@
             );
         });
         
-        $('.team').click(function(){
-            $('#myModal').modal()
-        })
+        // $('.team').click(function(){
+        //     $('#myModal').modal()
+        // })
 
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
-            $('#dropdown').click(function(){
-                console.log("Button Clicked")
-                $("#myDropdown").toggleClass("show");
-            });
+        // $('#dropdown').click(function(){
 
-            $(document).click(function (e) {
-                $("#myDropdown").removeClass("show");
-                $('#myInput').val('');
-                filterFunction();
-            })
+        //     $(".dropdown-content").toggleClass("show");
+        // });
+    
+        $('.team').click(function(){
+            $('.dropdown-content').not($(this).children('.dropdown-content')).removeClass('show');
+            if(!$(this).children('.dropdown-content').hasClass('show')){
+                $(this).children('.dropdown-content').addClass("show");
+            }
+            if($(this).is(':empty')){
+                $(this).html("<div id='myDropdown' class='dropdown-content show'><input type='text' placeholder='Search..' class='searchInput'><a href='#about'>About</a><a href='#base'>Base</a><a href='#blog'>Blog</a><a href='#contact'>Contact</a><a href='#custom'>Custom</a><a href='#support'>Support</a><a href='#tools'>Tools</a></div>");
+            }
+            filterFunctionReset($(this));
+        });
 
-            $("#dropdown, #myInput").click(function(e){
-                e.stopPropagation();
-            });
+        $(document).click(function (e) {
+            // console.log(e.target);
+            $('.dropdown-content').removeClass("show");
+            $('.searchInput').val('');
+        });
 
-        // TODO: Fix clear search returning no results
-        function filterFunction() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            filter2= filter.trim();
-            div = document.getElementById("myDropdown");
-            a = div.getElementsByTagName("a");
+        $('.team, .searchInput').click(function(e){
+            e.stopPropagation();
+        });
+
+        $(document).on('keyup', '.searchInput', function(){ 
+            var filter, ul, li, a, i;
+            filter = this.value.toUpperCase();
+            div = $(this).siblings();
+            a = div;
         
             for (i = 0; i < a.length; i++) {
-                if (a[i].innerHTML.toUpperCase().indexOf(filter2) > -1) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
                     a[i].style.display = "";
                 } else {
                     a[i].style.display = "none";
                 }
             }
-            
+        });
+
+        // TODO: fix reset search
+        function filterFunctionReset($element){
+            var filter, ul, li, a, i;
+            input = $element.find('.searchInput');
+            filter = '';
+            div = input.siblings();
+            a = div;
+        
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
         }
+
+        // function filterFunction() {
+        //     var input, filter, ul, li, a, i;
+        //     input = document.getElementById("myInput");
+        //     filter = input.value.toUpperCase();
+        //     div = document.getElementById("myDropdown");
+        //     a = div.getElementsByTagName("a");
+        
+        //     for (i = 0; i < a.length; i++) {
+        //         if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        //             a[i].style.display = "";
+        //         } else {
+        //             a[i].style.display = "none";
+        //         }
+        //     }
+            
+        // }
 
         /* Open when someone clicks on the span element */
         function openNav() {
